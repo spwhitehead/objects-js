@@ -37,29 +37,53 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
+document.getElementById("test-object-btn").addEventListener("click", (e) => {
+    const car = {
+        make: "Toyota",
+        model: "Corolla",
+        year: 2020,
+    };
+    
+    for (let key in car) {
+        console.log(`${key}: ${car[key]}`)
+    };
+});
+
+document.getElementById("comment-translation").addEventListener("click", (e) => {
+    const user = {
+        name: "John",
+        age: 30,
+        isAdmin: true
+    };
+
+    console.log(user);
+
+    user.name = "Tim";
+    user.city = "St. George";
+    delete user.isAdmin;
 
 
+    console.log(user);
+});
 
-//     const characterCount = (str) => {
-//         const charCount = {};
-//         for (const char of str) {
-//             if (char in charCount) {
-//                 charCount[char]++;
-//             } else {
-//                 charCount[char] = 1;
-//             }
-//         }
-//         console.log(charCount);
-//         return charCount;
-//     };
-// });
+document.getElementById("list-contents-btn").addEventListener("click", (e) => {
+    const elements = {
+      todos: [
+        "wash dishes",
+     "do laundry",
+        "wash more dishes",
+        "make dinner",
+        "wash dishes...again",
+      ],
+      assets: ["Axel", "Bjørn"],
+      investors: ["Kylie"],
+    };
 
-
-
-
-// Loop over str, logging each character
-// for (let i = 0; i < str.length; i++) {
-//     const c = str[i];
-//     console.log(c);
-    // If the char is in charCount, add one to it
-    // Otherwise, add char to the object and set its value to 1
+    for (const key in elements){
+        console.log(key);
+        for (const i of elements[key]){
+            console.log("* " + i);
+        };
+        console.log("");
+    };
+  });
